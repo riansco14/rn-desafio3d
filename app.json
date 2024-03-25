@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "rn-desafio3d",
+    "slug": "rn-desafio3d",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
