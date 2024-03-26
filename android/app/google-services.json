@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "490517350041",
+    "firebase_url": "https://desafio3d-95e7f-default-rtdb.firebaseio.com",
+    "project_id": "desafio3d-95e7f",
+    "storage_bucket": "desafio3d-95e7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490517350041:android:fb412e28ea60e2ec361a08",
+        "android_client_info": {
+          "package_name": "com.rndesafio3d"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1uPcuCU19fwY_jiC55UGUO719LiGp4aM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
