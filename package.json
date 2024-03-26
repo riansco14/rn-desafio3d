@@ -9,11 +9,14 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.16.0",
     "expo": "~48.0.21",
     "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
-    "react-native": "0.71.14"
+    "react-native": "0.71.14",
+    "three": "^0.162.0",
+    "expo-gl": "~12.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
