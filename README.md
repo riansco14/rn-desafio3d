@@ -9,6 +9,7 @@ O desafio tem como objetivo avaliar a pessoa candidata nas experiências:
 ![Telas](./database/TelasApp.png)
 
 Imagem da animação 3D
+
 <img src="./database/Formas.gif" width="25%" height="25%">
 
 ## Requisitos
