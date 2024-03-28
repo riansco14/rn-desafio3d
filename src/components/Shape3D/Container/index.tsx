@@ -1,38 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Canvas } from "@react-three/fiber/native";
-import database from "@react-native-firebase/database";
 import { Box } from "../Box";
 import { Cone } from "../Cone";
 import { Deca } from "../Deca";
 
-import remoteConfig from "@react-native-firebase/remote-config";
+import { useFetch } from "../../../hooks/app/home/useFetch";
 
-const positions = [[0, 1.5, 0], [0, 0, 0], [0, -1.5, 0]]
+const DEFAULT_POSITIONS = [
+  [0, 1.5, 0],
+  [0, 0, 0],
+  [0, -1.5, 0],
+];
+
 export function Container({ user }) {
-  const [formArray, setFormArray] = useState([]);
-
-  useEffect(() => {
-    let onValueChange;
-    if (user.uid)
-      onValueChange = database()
-        .ref(`/users/${user.uid}`)
-        .on("value", (snapshot) => {
-          const value = snapshot.val();
-          if (value?.shape) {
-          } else {
-            setFormArray(
-              JSON.parse(remoteConfig().getValue("default_config").asString())
-            );
-          }
-        });
-
-    // Stop listening for updates when no longer required
-    return () => {
-      if (onValueChange)
-        database().ref(`/users/${user.uid}`).off("value", onValueChange);
-    };
-  }, [user]);
-
+  const { formArray } = useFetch();
   return (
     <Canvas>
       <spotLight
@@ -48,7 +29,7 @@ export function Container({ user }) {
           case "cubo":
             return (
               <Box
-                position={positions[index]}
+                position={DEFAULT_POSITIONS[index]}
                 color={item.color}
                 rotation={item.rotation}
               />
@@ -56,17 +37,19 @@ export function Container({ user }) {
           case "deca":
             return (
               <Deca
-                position={positions[index]}
+                position={DEFAULT_POSITIONS[index]}
                 color={item.color}
                 rotation={item.rotation}
               />
             );
           case "cone":
-            return (<Cone
-              position={positions[index]}
-              color={item.color}
-              rotation={item.rotation}
-            />);
+            return (
+              <Cone
+                position={DEFAULT_POSITIONS[index]}
+                color={item.color}
+                rotation={item.rotation}
+              />
+            );
         }
       })}
     </Canvas>
